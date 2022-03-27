@@ -4,7 +4,7 @@ from .models import Article
 # Create your views here.
 
 def home(req):
-    template_name = "blog/index.html"
+    template_name = "blog/home.html"
     context = {
         "articles":Article.objects.filter(status="p").order_by("-publish")
     }
@@ -12,6 +12,6 @@ def home(req):
 
 
 def detail(req,slug):
-    template_name = "blog/single.html"
+    template_name = "blog/detail.html"
     context = { "article":Article.objects.get(slug=slug) }
     return render(request=req,template_name=template_name,context=context)

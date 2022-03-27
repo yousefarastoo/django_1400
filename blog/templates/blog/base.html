@@ -54,23 +54,20 @@
   </nav>
 
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('{% static "blog/img/home-bg.jpg" %}')">
+  <header class="masthead" style="background-image: url('{% block background-header %}{% static "blog/img/home-bg.jpg" %}{% endblock background-header %}')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+            <h1>{% block title-header %}خبر نامه رسمی یوسف{% endblock title-header %}</h1>
+            <span class="subheading">{% block title-header-description %}اخبار مقالات و شرح احوال{% endblock title-header-description %}</span>
           </div>
         </div>
       </div>
     </div>
   </header>
-        {% block main %}
-
-        {% endblock main %}
-
+        {% block main %}{% endblock main %}
   <!-- Footer -->
   <footer>
     <div class="container">

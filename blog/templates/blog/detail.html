@@ -1,5 +1,8 @@
 {% extends 'blog/base.html' %} 
 {% block title %} | {{article.title}} {% endblock title %}
+{% block background-header %} {{article.thumbnail.url}} {% endblock background-header %}
+{% block title-header %} {{article.title}} {% endblock title-header %}
+{% block title-header-description %}{% endblock title-header-description %}
 {% block main %}
 <!-- Main Content -->
 <div class="container">

@@ -4,12 +4,14 @@
 <!-- Main Content -->
 <div class="container">
   <div class="row">
-    {% for article in articles %}
     <div class="col-lg-8 col-md-10 mx-auto">
+    {% for article in articles %}
       <div class="post-preview">
         <a href="{% url 'blog:detail' article.slug %}">
           <h2 class="post-title">{{article.title}}</h2>
-          <h3 class="post-subtitle">{{article.description}}</h3>
+          <h3 class="post-subtitle">
+            {{article.description|truncatewords:10}}
+          </h3>
         </a>
         <p class="post-meta">
           Posted
@@ -27,5 +29,5 @@
   </div>
 </div>
 
-<hr/>
+<hr />
 {% endblock main %}

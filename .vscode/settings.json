@@ -1,0 +1,20 @@
+{
+
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "emmet.includeLanguages": {
+        "django-html":"html"
+    },
+    "[django-html]": {
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": true,
+            "strings": true
+        }
+    },
+    "files.associations": {
+        "*.html":"django-html"
+    }
+}

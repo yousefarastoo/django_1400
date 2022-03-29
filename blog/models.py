@@ -1,7 +1,7 @@
-from distutils.command.upload import upload
-from tabnanny import verbose
 from django.db import models
 from django.utils import timezone
+from extensions.utils import jalali_convertor
+
 
 class Article(models.Model):
     STATUS_CHOICES = (
@@ -18,11 +18,15 @@ class Article(models.Model):
     status = models.CharField(
         max_length=1, choices=STATUS_CHOICES, verbose_name="وضعیت")
 
-    def thumbnail_show(self):
-        return self.thumbnail.url
-    
     class Meta:
-        verbose_name="مقاله"
-        verbose_name_plural="مقالات"
+            verbose_name="مقاله"
+            verbose_name_plural="مقالات"
+
+    # def thumbnail_show(self):
+    #     return self.thumbnail.url
+    
     def __str__(self) -> str:
         return self.title
+    
+    def jpublish(self):
+        return jalali_convertor(self.publish)
